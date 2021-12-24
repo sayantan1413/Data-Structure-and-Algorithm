@@ -4,7 +4,8 @@ using namespace std;
 int binarySearch(int a[], int n, int key)
 {
     int start = 0, end = n - 1;
-    int mid = (start + end) / 2;
+    // int mid = (start + end) / 2;
+    int mid = start + ((end - start) / 2);
     while (start <= end)
     {
         if (a[mid] == key)
@@ -14,7 +15,7 @@ int binarySearch(int a[], int n, int key)
         if (a[mid] < key)
             start = mid + 1;
 
-        mid = (start + end) / 2;
+        mid = start + ((end - start) / 2);
     }
     return -1;
 }
